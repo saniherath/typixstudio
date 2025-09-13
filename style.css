@@ -1,0 +1,136 @@
+/* ===== Global Styles ===== */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  background: #fafafa;
+  color: #333;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #111;
+  color: #fff;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.nav-links a:hover {
+  color: #0dd36f;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #0dd36f, #0a9e5a);
+  color: #fff;
+  padding: 2rem;
+}
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.cta-btn {
+  background: #fff;
+  color: #0a9e5a;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+.cta-btn:hover {
+  background: #eee;
+}
+
+/* ===== Sections ===== */
+section {
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* ===== Services ===== */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+.service-card {
+  background: #fff;
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* ===== Contact ===== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+form input, form textarea, form button {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+form button {
+  background: #0a9e5a;
+  color: #fff;
+  cursor: pointer;
+}
+form button:hover {
+  background: #087548;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #111;
+  color: #fff;
+}
+.social-icons a {
+  margin: 0 0.5rem;
+  color: #0dd36f;
+  text-decoration: none;
+}
+
+/* ===== WhatsApp Floating Button ===== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 0.8rem 1rem;
+  border-radius: 50%;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+.whatsapp-float:hover {
+  background: #1da851;
+}
