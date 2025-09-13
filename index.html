@@ -1,423 +1,108 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Typix Studio — Design. Create. Inspire.</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Typix Studio - Typesetting, Graphic Design, and Web Development in Sri Lanka">
+  <title>Typix Studio</title>
 
-  <!-- Google Font (HTTPS) -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Minimal reset + base styles -->
-  <style>
-    :root{
-      --bg:#0f1724; /* dark background */
-      --card:#0b1220;
-      --muted:#9aa4b2;
-      --accent:#08a045; /* green accent */
-      --glass: rgba(255,255,255,0.03);
-      --max-width:1100px;
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-      color-scheme: dark;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      background:linear-gradient(180deg,var(--bg),#071021);
-      color:#e6eef6;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.45;
-      padding:20px 16px 80px;
-      display:flex;
-      justify-content:center;
-    }
-    .container{width:100%;max-width:var(--max-width)}
-
-    /* NAV */
-    header{position:sticky;top:12px;z-index:50}
-    nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px;border-radius:12px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));backdrop-filter:blur(6px)}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:48px;height:48px;display:inline-grid;place-items:center;border-radius:8px;background:linear-gradient(135deg,#0b1220,#12202b);box-shadow:0 6px 18px rgba(2,6,23,0.6)}
-    .logo svg{width:28px;height:28px}
-    .nav-links{display:flex;gap:14px;align-items:center}
-    .nav-links a{color:var(--muted);text-decoration:none;padding:8px;border-radius:8px;font-weight:600}
-    .nav-links a:hover{color:#fff;background:var(--glass)}
-    .cta{padding:8px 12px;border-radius:8px;background:linear-gradient(90deg,var(--accent),#06a34a);color:#041014;text-decoration:none;font-weight:700}
-
-    /* Hero */
-    .hero{display:grid;grid-template-columns:1fr;gap:18px;padding:36px 0}
-    .hero-inner{display:flex;flex-direction:column;gap:14px}
-    .tagline{font-size:clamp(20px,3.6vw,36px);font-weight:700;letter-spacing:-0.02em}
-    .sub{color:var(--muted);max-width:60ch}
-    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
-
-    /* Cards */
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px}
-
-    /* Sections */
-    section{margin-top:28px}
-    h2{margin:0 0 8px 0}
-    p.lead{color:var(--muted);margin:0}
-
-    /* Services list */
-    .service{display:flex;gap:12px;align-items:flex-start}
-    .service svg{width:36px;height:36px;flex-shrink:0}
-
-    /* Contact form */
-    form{display:grid;gap:10px}
-    label{font-size:13px;color:var(--muted)}
-    input,textarea,button,select{padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;font:inherit}
-    textarea{min-height:120px}
-    .muted{color:var(--muted);font-size:13px}
-
-    /* Footer */
-    footer{margin-top:30px;padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));display:flex;justify-content:space-between;gap:12px;align-items:center}
-
-    /* WhatsApp floating button */
-    .wa-btn{position:fixed;right:18px;bottom:18px;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;box-shadow:0 12px 30px rgba(2,6,23,0.6);z-index:60;text-decoration:none}
-
-    /* Responsive */
-    @media(min-width:880px){
-      .hero{grid-template-columns:1fr 420px}
-      .hero-inner{gap:20px}
-    }
-  </style>
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
+  <!-- ===== Navigation Bar ===== -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Typix Studio</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- NAVIGATION -->
-    <header>
-      <nav role="navigation" aria-label="Main navigation">
-        <div class="brand">
-          <div class="logo" aria-hidden="true">
-            <!-- simple logo SVG -->
-            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect width="64" height="64" rx="10" fill="#08131A"/>
-              <path d="M18 44V20h10v24h-10zM36 24h10v4H36v16h-10V24h10z" fill="#08A045"/>
-            </svg>
-          </div>
-          <div>
-            <div style="font-weight:700">Typix Studio</div>
-            <div class="muted" style="font-size:12px">Typesetting · Graphic Design · Web Dev</div>
-          </div>
-        </div>
+  <!-- ===== Hero Section ===== -->
+  <section id="home" class="hero">
+    <h1>Design. Create. Inspire.</h1> <!-- EDIT tagline here -->
+    <p>We bring your ideas to life with creativity and technology.</p>
+    <a class="cta-btn" href="https://wa.me/94770000000" target="_blank" rel="noopener noreferrer"> <!-- CHANGE WhatsApp number -->
+      Contact Us on WhatsApp
+    </a>
+  </section>
 
-        <div class="nav-links" id="navLinks">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#contact">Contact</a>
-          <a class="cta" id="whatsappCta" href="#contact">Contact Us on WhatsApp</a>
-        </div>
-      </nav>
-    </header>
+  <!-- ===== About Us ===== -->
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>Typix Studio is a Sri Lanka–based creative studio specializing in typesetting, graphic design, and web development. Our mission is to deliver high-quality, affordable, and innovative solutions to help your brand grow.</p>
+  </section>
 
-    <!-- HERO -->
-    <main>
-      <section id="home" class="hero">
-        <div class="hero-inner">
-          <div class="card">
-            <div class="tagline" id="taglineText">Design. Create. Inspire.</div>
-            <!-- EDIT: To change the tagline, replace the text inside the element with id="taglineText" -->
-            <p class="sub">We are Typix Studio — a Sri Lanka based creative studio focused on high-quality typesetting, clean graphic design, and modern websites that load fast and look great on any device.</p>
-            <div style="margin-top:14px;display:flex;gap:12px;flex-wrap:wrap">
-              <a class="cta" id="whatsappCta2" href="#Contact">Contact Us on WhatsApp</a>
-              <a href="#services" style="padding:8px 12px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.04);text-decoration:none;font-weight:600">Our Services</a>
-            </div>
-          </div>
+  <!-- ===== Services ===== -->
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="service-grid">
+      <div class="service-card">Typesetting</div>
+      <div class="service-card">Graphic Design</div>
+      <div class="service-card">Web Development</div>
+      <div class="service-card">Branding</div>
+    </div>
+  </section>
 
-          <section id="why" class="card">
-            <h2>Why Choose Us</h2>
-            <p class="lead">Creativity, quality, affordable pricing, and timely delivery — we combine modern design with practical workflows so your project ships on time.</p>
-            <ul class="muted" style="margin-top:12px">
-              <li>Experienced typesetters and designers</li>
-              <li>Fast turnarounds with clear milestones</li>
-              <li>Affordable packages for small businesses</li>
-              <li>Secure and accessible web development</li>
-            </ul>
-          </section>
-        </div>
+  <!-- ===== Why Choose Us ===== -->
+  <section class="why-choose">
+    <h2>Why Choose Us</h2>
+    <ul>
+      <li>Creative and modern designs</li>
+      <li>High-quality output</li>
+      <li>Affordable pricing</li>
+      <li>Timely delivery</li>
+    </ul>
+  </section>
 
-        <aside>
-          <div class="card">
-            <h3 style="margin:0 0 8px 0">Our Services</h3>
-            <div class="services-grid">
-              <div class="service">
-                <!-- Icon: Typesetting -->
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="4" width="18" height="3" rx="1.5" fill="#0EA5A4"/><rect x="3" y="9" width="18" height="3" rx="1.5" fill="#06B6D4"/><rect x="3" y="14" width="12" height="3" rx="1.5" fill="#08A045"/></svg>
-                <div>
-                  <div style="font-weight:700">Typesetting</div>
-                  <div class="muted">Print-ready layouts, book typesetting, magazines.</div>
-                </div>
-              </div>
+  <!-- ===== Contact Section ===== -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form id="contactForm" novalidate>
+      <input type="text" id="name" name="name" placeholder="Your Name" required>
+      <input type="email" id="email" name="email" placeholder="Your Email" required>
+      <textarea id="message" name="message" placeholder="Your Message" required></textarea>
 
-              <div class="service">
-                <!-- Icon: Graphic Design -->
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="8" r="3" fill="#FFB020"/><rect x="3" y="13" width="18" height="6" rx="1.5" fill="#7C3AED"/></svg>
-                <div>
-                  <div style="font-weight:700">Graphic Designing</div>
-                  <div class="muted">Logos, posters, social media creatives.</div>
-                </div>
-              </div>
+      <!-- Honeypot -->
+      <input type="text" id="honeypot" name="honeypot" style="display:none">
 
-              <div class="service">
-                <!-- Icon: Web Dev -->
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2" fill="#0EA5A4"/><path d="M7 9h10" stroke="#042F2B" stroke-width="1.2" stroke-linecap="round"/></svg>
-                <div>
-                  <div style="font-weight:700">Web Development</div>
-                  <div class="muted">Fast, secure, responsive websites.</div>
-                </div>
-              </div>
+      <!-- Simple Anti-Spam -->
+      <label for="captcha">What is 3 + 4?</label>
+      <input type="number" id="captcha" name="captcha" required>
 
-              <div class="service">
-                <!-- Icon: Branding -->
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 20h16v-4L12 4 4 16v4z" fill="#F97316"/></svg>
-                <div>
-                  <div style="font-weight:700">Branding</div>
-                  <div class="muted">Visual identity, brand guidelines.</div>
-                </div>
-              </div>
+      <button type="submit">Send Message</button>
+    </form>
 
-            </div>
-          </div>
-        </aside>
-      </section>
+    <div class="contact-info">
+      <p>Email: <a href="mailto:info@typixstudio.lk">info@typixstudio.lk</a></p> <!-- CHANGE email -->
+      <p>Phone: +94 77 000 0000</p> <!-- CHANGE phone -->
+      <p>Address: Colombo, Sri Lanka</p> <!-- CHANGE address -->
+    </div>
+  </section>
 
-      <!-- ABOUT -->
-      <section id="about" class="card">
-        <h2>About Us</h2>
-        <p class="lead">Typix Studio is based in Sri Lanka and specialises in typesetting, graphic design and web development. Our mission is to help brands communicate clearly and beautifully across print and digital media.</p>
-        <p class="muted" style="margin-top:8px">We believe in clean typography, robust code, and workflows that respect your deadlines and budget.</p>
-      </section>
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>&copy; 2025 Typix Studio. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="https://facebook.com/typixstudio" target="_blank" rel="noopener noreferrer">Facebook</a> <!-- CHANGE -->
+      <a href="https://instagram.com/typixstudio" target="_blank" rel="noopener noreferrer">Instagram</a> <!-- CHANGE -->
+    </div>
+  </footer>
 
-      <!-- SERVICES SECTION (detailed) -->
-      <section id="services" class="card">
-        <h2>Services</h2>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:12px">
-          <div>
-            <h4 style="margin:0 0 6px 0">Typesetting</h4>
-            <p class="muted">Book layout, academic theses, magazines, EPUB conversion.</p>
-          </div>
-          <div>
-            <h4 style="margin:0 0 6px 0">Graphic Designing</h4>
-            <p class="muted">Logos, brochures, posters, social media assets.</p>
-          </div>
-          <div>
-            <h4 style="margin:0 0 6px 0">Web Development</h4>
-            <p class="muted">Static sites, CMS integration, accessible and secure builds.</p>
-          </div>
-          <div>
-            <h4 style="margin:0 0 6px 0">Branding</h4>
-            <p class="muted">Identity systems, brand guidelines, stationery.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- CONTACT -->
-      <section id="Contact" class="card">
-        <h2>Contact</h2>
-        <p class="lead">Get in touch — we reply quickly. Use the contact form or message us directly on WhatsApp.</p>
-
-        <div style="display:grid;grid-template-columns:1fr;gap:14px;margin-top:12px">
-          <div>
-            <!-- Contact details (editable lines marked below) -->
-            <p class="muted">
-              <!-- EDIT: Change the contact email on the line below -->
-              Email: <span id="contactEmail">hello@typixstudio.lk</span><br>
-              <!-- EDIT: Change the phone number on the line below -->
-              Phone: <span id="contactPhone">+94 77 123 4567</span><br>
-              <!-- EDIT: Change the business address on the line below -->
-              Address: <span id="contactAddress">Colombo, Sri Lanka</span>
-            </p>
-          </div>
-
-          <form id="contactForm" novalidate>
-            <!-- Honeypot field: hidden from users; bots may fill it -->
-            <input type="text" id="hp_field" name="hp_field" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0">
-
-            <label for="name">Your name</label>
-            <input id="name" name="name" type="text" autocomplete="name" required aria-required="true">
-
-            <label for="email">Your email</label>
-            <input id="email" name="email" type="email" autocomplete="email" required aria-required="true">
-
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required></textarea>
-
-            <!-- Simple math captcha to reduce spam -->
-            <label for="captcha">What is <span id="captchaA"></span> + <span id="captchaB"></span>? (anti-spam)</label>
-            <input id="captcha" name="captcha" type="number" required>
-
-            <div style="display:flex;gap:8px;align-items:center">
-              <button type="submit" id="sendBtn">Send Message</button>
-              <div id="formStatus" class="muted" role="status" aria-live="polite"></div>
-            </div>
-            <p class="muted" style="margin-top:8px">Note: This form opens your email client with the message prefilled; no server-side data storage is used.</p>
-          </form>
-        </div>
-      </section>
-
-      <!-- FOOTER -->
-      <footer>
-        <div style="display:flex;flex-direction:column">
-          <div style="font-weight:700">Typix Studio</div>
-          <div class="muted" style="font-size:13px">© <span id="year"></span> Typix Studio. All rights reserved.</div>
-        </div>
-
-        <div style="display:flex;gap:12px;align-items:center">
-          <nav aria-label="footer-links">
-            <a href="#home" class="muted">Home</a> &nbsp; <a href="#services" class="muted">Services</a> &nbsp; <a href="#contact" class="muted">Contact</a>
-          </nav>
-
-          <!-- Social icons (change links in JS section below) -->
-          <div style="display:flex;gap:8px;align-items:center">
-            <a id="facebookLink" href="https://facebook.com/typixstudio" aria-label="Typix Studio on Facebook" target="_blank" rel="noopener noreferrer">
-              <!-- Facebook SVG -->
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M22 12C22 6.477 17.523 2 12 2S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.876v-6.99H7.898v-2.886h2.54V9.845c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.462h-1.26c-1.242 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.886h-2.33v6.99C18.343 21.128 22 16.991 22 12z" fill="currentColor"/></svg>
-            </a>
-            <a id="instagramLink" href="https://instagram.com/typixstudio" aria-label="Typix Studio on Instagram" target="_blank" rel="noopener noreferrer">
-              <!-- Instagram SVG -->
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 6.5A4.5 4.5 0 1 0 16.5 13 4.5 4.5 0 0 0 12 8.5zM18.5 6a1.1 1.1 0 1 0 1.1 1.1A1.1 1.1 0 0 0 18.5 6z" fill="currentColor"/></svg>
-            </a>
-          </div>
-        </div>
-      </footer>
-
-    </main>
-
-  </div>
-
-  <!-- WHATSAPP FLOATING BUTTON -->
-  <!-- EDIT: change the WhatsApp number in the script section below where WHATSAPP_NUMBER is set -->
-  <a id="whatsappFloat" class="wa-btn" href="#" aria-label="Chat on WhatsApp" target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp" style="background:linear-gradient(90deg,#25D366,#128C7E);color:#fff">
-    <svg viewBox="0 0 24 24" width="26" height="26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20.52 3.48A11.91 11.91 0 0012 1C6.486 1 2 5.486 2 11c0 1.93.504 3.83 1.463 5.49L2 23l6.73-1.406A11.955 11.955 0 0012 23c5.514 0 10-4.486 10-10 0-1.836-.48-3.557-1.48-5.02z" fill="#fff" opacity=".06"/><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.149-.671.15-.198.297-.768.967-.94 1.166-.173.198-.347.223-.644.075-.297-.149-1.255-.462-2.39-1.475-.883-.786-1.48-1.754-1.653-2.052-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.148-.173.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.671-1.612-.918-2.206-.242-.58-.487-.5-.671-.51l-.571-.01c-.198 0-.52.074-.793.372s-1.04 1.016-1.04 2.479 1.064 2.873 1.212 3.074c.149.198 2.095 3.2 5.076 4.487 0 .05.744.296 1.688.296.944 0 1.545-.297 1.688-.296.148 0 .48-.074.871-.298.391-.223 1.258-1.015 1.436-1.994.178-.98.178-1.819.125-1.995-.05-.173-.297-.272-.594-.421z" fill="#fff"/></svg>
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/94770000000" class="whatsapp-float" target="_blank" rel="noopener noreferrer"> <!-- CHANGE number -->
+    💬
   </a>
 
-  <!-- SCRIPT: all JS kept in this block (no inline attributes).  -->
-  <script>
-    'use strict';
-
-    // ========== EDITABLE CONTACT & SOCIAL INFO (Change only the values below) ==========
-    // EDIT: Replace the WhatsApp phone number below in international format (no spaces), e.g. +94771234567
-    const WHATSAPP_NUMBER = '+94771234567';
-
-    // EDIT: Change the email address
-    const CONTACT_EMAIL = 'hello@typixstudio.lk';
-
-    // EDIT: Change the phone number (display)
-    const CONTACT_PHONE = '+94 77 123 4567';
-
-    // EDIT: Change the business address (display)
-    const CONTACT_ADDRESS = 'Colombo, Sri Lanka';
-
-    // EDIT: Social links (use full https:// links). Set to '#' to disable.
-    const FACEBOOK_URL = 'https://facebook.com/typixstudio';
-    const INSTAGRAM_URL = 'https://instagram.com/typixstudio';
-
-    // EDIT: Update the tagline text if desired (keeps the HTML element safe)
-    const TAGLINE = 'Design. Create. Inspire.';
-    // ===================================================================================
-
-    // Populate contact info safely (use textContent to avoid injection)
-    document.getElementById('contactEmail').textContent = CONTACT_EMAIL;
-    document.getElementById('contactPhone').textContent = CONTACT_PHONE;
-    document.getElementById('contactAddress').textContent = CONTACT_ADDRESS;
-    document.getElementById('taglineText').textContent = TAGLINE;
-
-    // Footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Social links
-    document.getElementById('facebookLink').setAttribute('href', FACEBOOK_URL);
-    document.getElementById('instagramLink').setAttribute('href', INSTAGRAM_URL);
-
-    // WhatsApp CTA links (both top CTA and floating button)
-    function makeWhatsAppUrl(number){
-      // Use the official wa.me short link. Replace leading + if present.
-      const cleaned = String(number).replace(/[^0-9]/g,'');
-      return 'https://wa.me/' + encodeURIComponent(cleaned);
-    }
-    const waUrl = makeWhatsAppUrl(WHATSAPP_NUMBER);
-    document.getElementById('whatsappFloat').setAttribute('href', waUrl);
-    document.getElementById('whatsappCta').setAttribute('href', waUrl);
-    document.getElementById('whatsappCta2').setAttribute('href', waUrl);
-
-    // CAPTCHa: simple math question
-    (function(){
-      const a = Math.floor(Math.random()*8)+1;
-      const b = Math.floor(Math.random()*8)+1;
-      document.getElementById('captchaA').textContent = a;
-      document.getElementById('captchaB').textContent = b;
-      // store expected answer in dataset (not in HTML) to avoid visible data
-      document.getElementById('captcha').dataset.expected = String(a+b);
-    })();
-
-    // Form handling (client-side validation + mailto fallback). No server-side storage.
-    const form = document.getElementById('contactForm');
-    const formStatus = document.getElementById('formStatus');
-
-    function sanitizeText(s){
-      // Basic sanitization: convert to string and strip tags
-      return String(s).replace(/<[^>]*>?/gm, '').trim();
-    }
-
-    form.addEventListener('submit', function(evt){
-      evt.preventDefault();
-
-      // Honeypot check
-      if(document.getElementById('hp_field').value){
-        formStatus.textContent = 'Spam detected.';
-        return;
-      }
-
-      const name = sanitizeText(document.getElementById('name').value);
-      const email = sanitizeText(document.getElementById('email').value);
-      const message = sanitizeText(document.getElementById('message').value);
-      const captcha = sanitizeText(document.getElementById('captcha').value);
-      const expected = document.getElementById('captcha').dataset.expected;
-
-      // Basic validation
-      if(!name || name.length < 2){ formStatus.textContent = 'Please enter your name.'; return; }
-      if(!email || !/^\S+@\S+\.\S+$/.test(email)){ formStatus.textContent = 'Please enter a valid email.'; return; }
-      if(!message || message.length < 6){ formStatus.textContent = 'Message is too short.'; return; }
-      if(captcha !== expected){ formStatus.textContent = 'Incorrect anti-spam answer.'; return; }
-
-      // Prepare mailto - encode components
-      const subject = encodeURIComponent('Inquiry from website: ' + name);
-      const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nPhone: ' + CONTACT_PHONE + '\nAddress: ' + CONTACT_ADDRESS + '\n\nMessage:\n' + message);
-      const mailto = 'mailto:' + encodeURIComponent(CONTACT_EMAIL) + '?subject=' + subject + '&body=' + body;
-
-      // Open user's email client (no server). Use window.open with rel noopener via anchor creation to avoid injection.
-      const anchor = document.createElement('a');
-      anchor.href = mailto;
-      anchor.rel = 'noopener noreferrer';
-      anchor.target = '_blank';
-      document.body.appendChild(anchor);
-      anchor.click();
-      document.body.removeChild(anchor);
-
-      formStatus.textContent = 'Email client opened — please send the message to complete.';
-
-      // Clear message and regenerate captcha
-      document.getElementById('message').value = '';
-      document.getElementById('captcha').value = '';
-      (function(){
-        const a = Math.floor(Math.random()*8)+1;
-        const b = Math.floor(Math.random()*8)+1;
-        document.getElementById('captchaA').textContent = a;
-        document.getElementById('captchaB').textContent = b;
-        document.getElementById('captcha').dataset.expected = String(a+b);
-      })();
-    });
-
-    // Accessibility: keyboard focus for wa button
-    document.getElementById('whatsappFloat').addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' ') { this.click(); }});
-
-    // Small security note: We avoid innerHTML with user inputs and always use textContent to populate.
-  </script>
+  <!-- JS -->
+  <script src="script.js"></script>
 </body>
 </html>
