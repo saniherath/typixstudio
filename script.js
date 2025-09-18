@@ -1,29 +1,22 @@
-/* ============================
-   Typix Studio — script.js
-   - Keeps all JS here (no inline JS)
-   - Edit contact info below where marked
-   ============================ */
 'use strict';
+//WhatsApp Number
+const WHATSAPP_NUMBER = '+94751810675';
 
-/* ========== EDIT THESE VALUES (only change values below) ========== */
-// EDIT: WhatsApp number used for wa.me links. Use international format, e.g. +94771234567
-const WHATSAPP_NUMBER = '+94771234567';
-
-// EDIT: Contact display email and address
+//display email and address
 const CONTACT_EMAIL = 'hello@typixstudio.lk';
-const CONTACT_PHONE = '+94 77 123 4567';
-const CONTACT_ADDRESS = 'Colombo, Sri Lanka';
+const CONTACT_PHONE = '+94 75 181 0675';
+const CONTACT_ADDRESS = 'Kandy, Sri Lanka';
 
-// EDIT: Social links (https)
+//Social links
 const FACEBOOK_URL = 'https://facebook.com/typixstudio';
 const INSTAGRAM_URL = 'https://instagram.com/typixstudio';
 
-// EDIT: Tagline text (change if desired)
+//Tagline
 const TAGLINE = 'Design. Create. Inspire.';
+
 /* =================================================================== */
 
 document.addEventListener('DOMContentLoaded', function () {
-  // Populate editable text safely
   const elEmail = document.getElementById('contactEmail');
   const elPhone = document.getElementById('contactPhone');
   const elAddress = document.getElementById('contactAddress');
@@ -66,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (captchaB) captchaB.textContent = b;
   if (captchaField) captchaField.dataset.expected = String(a + b);
 
-  // Contact form handling (client-side only)
+  // Contact form handling (client-side)
   const form = document.getElementById('contactForm');
   const formStatus = document.getElementById('formStatus');
 
@@ -103,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nPhone: ' + CONTACT_PHONE + '\nAddress: ' + CONTACT_ADDRESS + '\n\nMessage:\n' + message);
       const mailto = 'mailto:' + encodeURIComponent(CONTACT_EMAIL) + '?subject=' + subject + '&body=' + body;
 
-      // Open mailto using anchor to avoid window.open issues
+      // Open mailto using anchor
       const aEl = document.createElement('a');
       aEl.href = mailto;
       aEl.target = '_blank';
@@ -125,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // keyboard accessibility: enable Enter on whatsapp float
+  // whatsapp float
   const wpButton = document.getElementById('whatsappFloat');
   if (wpButton) {
     wpButton.addEventListener('keydown', function (e) {
@@ -133,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // small enhancement: reveal elements when scrolled into view (simple)
+  //reveal elements when scrolled into view
   const reveals = document.querySelectorAll('.service-card, .why-item, .split-text, .hero-card');
   const io = new IntersectionObserver((entries) => {
     entries.forEach(ent => {
